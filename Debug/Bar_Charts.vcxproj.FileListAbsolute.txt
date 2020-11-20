@@ -1,0 +1,2 @@
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\Debug\Bar_Charts.exe
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\Debug\Bar_Charts.pdb
