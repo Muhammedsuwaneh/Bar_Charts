@@ -9,6 +9,7 @@ BarChart::BarChart(std::string filename) {
 	this->data.open(filename, std::ios::in);
 
 	std::getline(data, this->data_title);
+	std::getline(data, this->y_title);
 	data >> this->data_size >> this->rows;
 
 	this->rows += 5;
@@ -27,8 +28,6 @@ BarChart::~BarChart() {
 
 void BarChart::setValues() {
 
-	this->mode = 0.0;
-	this->median = 0.0;
 	this->mean = 0.0;
 	
 	int count = this->rows - 1;
@@ -43,11 +42,9 @@ void BarChart::setValues() {
 double BarChart::getMean() const {
 	return this->mean;
 }
-double BarChart::getMedian() const {
-	return this->median;
-}
-double BarChart::getMode() const {
-	return this->mode;
+
+double BarChart::getTotal() const {
+	return this->total;
 }
 
 void BarChart::reset_Chart() {
@@ -75,7 +72,7 @@ void BarChart::readData() {
 
 	BarChartNode* node = NULL;
 	int count = 8, increment = 0;
-	int i = 0;
+	int i = 0, sum = 0;
 
 	while (i < this->data_size) {
 
@@ -84,8 +81,11 @@ void BarChart::readData() {
 		populateChart(node, &count, &increment);
 		increment += count + 2;
 		x_labels.push_back(node->label);
+		sum += node->height;
 		i++;
 	}
+
+	computeMean(sum);
 }
 
 BarChartNode* addNode(BarChartNode*head, int h, std::string l) {
@@ -141,4 +141,16 @@ void BarChart::displayChart() {
 	// display labels
 	for (int i = 0; i < this->x_labels.size(); i++)
 		std::cout << this->x_labels[i] << "    ";
+
+	std::cout << "\n\n";
+	std::cout << std::setw(10) << "   ";
+	std::cout << "Total " << this->y_title << " is: " << this->getTotal() << "\n";
+	std::cout << std::setw(10) << "   ";
+	std::cout << "Average " << this->y_title << " is: " << this->getMean() << "\n";
+}
+
+void BarChart::computeMean(int sum) {
+
+	this->total = sum;
+	this->mean = this->total / (double)this->data_size;
 }

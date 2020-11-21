@@ -8,29 +8,24 @@
 class BarChart
 {
 private:
-	double mode, mean, median;
+	double mean, total;
 	int rows, cols, data_size;
 	char** chart_Matrix;
 	std::vector<std::string> x_labels;
 	std::vector<int>y_labels;
 	std::fstream data;
-	std::string data_title;
+	std::string data_title, y_title;
 public:
 	BarChart(std::string);
 	~BarChart();
 	void setValues();
 	double getMean() const;
-	double getMedian() const;
-	double getMode() const;
+	double getTotal() const;
 	void reset_Chart(); 
 	void readData();
+	void computeMean(int);
 	void populateChart(BarChartNode*, int*, int*);
 	void displayChart();
-	// calculate mean
-    // calculate median
-    // calculate mode
-    // compute highest width
-	// display results
 };
 
 #endif
