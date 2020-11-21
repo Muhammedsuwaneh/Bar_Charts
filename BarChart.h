@@ -10,6 +10,7 @@ private:
 	BarChartNode* head;
 	double mode, mean, median;
 	char** chart_Matrix;
+	char* x_labels;
 	int* y_labels;
 	const int rows = 31;
 	const int cols = 100;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <iomanip>
 #include "BarChart.h"
 #include "BarChartNode.h"
@@ -45,8 +46,6 @@ double BarChart::getMode() const {
 
 void BarChart::reset_Chart() {
 
-	std::cout << "\n" << std::setw(50) << this->data_title << std::endl;
-
 	for (int i = 0; i < this->rows; i++) {
 
 		for (int j = 0; j < this->cols; j++) {
@@ -63,15 +62,19 @@ void BarChart::reset_Chart() {
 
 void BarChart::readData() {
 
-	
+	this->data.open("dataSet1.txt", std::ios::in);
 
+	std::getline(data, this->data_title);
 }
 
 void BarChart::displayChart() {
 
 	reset_Chart();
+	readData();
 
 	int n = this->rows, count = 0;
+
+	std::cout << "\n " << std::right << std::setw(70) << this->data_title << std::endl;
 
 	for (int i = 0; i < this->rows; i++) {
 
