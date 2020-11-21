@@ -9,4 +9,6 @@ struct BarChartNode {
 	BarChartNode* next; // next bar node
 };
 
+BarChartNode* addNode(BarChartNode*, int, std::string);
+
 #endif

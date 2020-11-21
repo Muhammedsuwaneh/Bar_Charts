@@ -2,22 +2,21 @@
 #define _BARCHART_
 #include <string>
 #include <fstream>
+#include <vector>
 #include "BarChartNode.h"
 
 class BarChart
 {
 private:
-	BarChartNode* head;
 	double mode, mean, median;
+	int rows, cols, data_size;
 	char** chart_Matrix;
-	char* x_labels;
-	int* y_labels;
-	const int rows = 31;
-	const int cols = 100;
+	std::vector<std::string> x_labels;
+	std::vector<int>y_labels;
 	std::fstream data;
 	std::string data_title;
 public:
-	BarChart();
+	BarChart(std::string);
 	~BarChart();
 	void setValues();
 	double getMean() const;
@@ -25,8 +24,7 @@ public:
 	double getMode() const;
 	void reset_Chart(); 
 	void readData();
-	// add label and width to node 
-	// create a chart
+	void populateChart(BarChartNode*, int*, int*);
 	void displayChart();
 	// calculate mean
     // calculate median

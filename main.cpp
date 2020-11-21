@@ -5,9 +5,13 @@
 
 void frame() {
 
+	std::cout << "\n";
+
 	std::cout << std::setw(5) << " ";
 	for (int i = 0; i < 100; i++)
 		std::cout << "=";
+
+	std::cout << "\n";
 }
 void Test1();
 
@@ -25,12 +29,13 @@ void Test1() {
 
 	try {
 
-		BarChart* chart = new BarChart();
+		std::string filename = "dataSet1.txt";
+		BarChart* chart = new BarChart(filename);
 		chart->displayChart();
 
 	}
 	catch (std::exception const& ex) {
 
-		std::cerr << ex.what() << std::endl;
+		std::cerr << std::setw(50) << ex.what() << std::endl;
 	}
 }
