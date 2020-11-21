@@ -1,3 +1,4 @@
-﻿  BarChart.cpp
-C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\BarChart.cpp(142,20): warning C4018: '<': signed/unsigned mismatch
+﻿  main.cpp
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\main.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\main.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Bar_Charts.vcxproj -> C:\Users\PROJECT VENUS\Documents\C++ Data Structures and Algorithms\Practice\Bar_Charts\Debug\Bar_Charts.exe

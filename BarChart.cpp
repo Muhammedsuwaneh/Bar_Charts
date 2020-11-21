@@ -101,7 +101,7 @@ BarChartNode* addNode(BarChartNode*head, int h, std::string l) {
 
 void BarChart::populateChart(BarChartNode* node, int* count, int* increment) {
 
-	for (int i = this->rows - 2; i > node->height; i--) {
+	for (int i = this->rows - 2; i > (this->rows-2) - node->height; i--) {
 
 		for (int j = *increment + 1; j < *count + *increment + 1; j++) {
 
@@ -137,7 +137,7 @@ void BarChart::displayChart() {
 		n--;
 	}
 	std::cout << "\n";
-	std::cout << std::setw(7) << "  ";
+	std::cout << std::setw(5) << "  ";
 	// display labels
 	for (int i = 0; i < this->x_labels.size(); i++)
 		std::cout << this->x_labels[i] << "    ";

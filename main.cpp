@@ -14,13 +14,16 @@ void frame() {
 	std::cout << "\n";
 }
 void Test1();
+void Test2();
 
 int main() {
+
 
 	frame();
 	Test1();
 	frame();
-	
+	Test2();
+	frame();
 	std::cout << "\n\n";
 	return 0;
 }
@@ -30,6 +33,21 @@ void Test1() {
 	try {
 
 		std::string filename = "dataSet1.txt";
+		BarChart* chart = new BarChart(filename);
+		chart->displayChart();
+
+	}
+	catch (std::exception const& ex) {
+
+		std::cerr << std::setw(50) << ex.what() << std::endl;
+	}
+}
+
+void Test2() {
+
+	try {
+
+		std::string filename = "dataSet2.txt";
 		BarChart* chart = new BarChart(filename);
 		chart->displayChart();
 
