@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "BarChart.h"
 #include "BarChartNode.h"
 
@@ -6,6 +7,7 @@ BarChart::BarChart() {
 
 	this->head = NULL;
 	chart_Matrix = new char* [this->rows];
+	y_labels = new int[this->rows/5];
 	for(int i = 0; i < this->rows; i++) 
 		chart_Matrix[i] = new char[this->cols];
 	setValues();
@@ -21,6 +23,14 @@ void BarChart::setValues() {
 	this->mode = 0.0;
 	this->median = 0.0;
 	this->mean = 0.0;
+	
+	int count = this->rows - 1;
+	int n = count / 5;
+
+	for (int i = 0; i <= n; i++) {
+		y_labels[i] = count;
+		count -= 5;
+	}
 }
 
 double BarChart::getMean() const {
@@ -34,6 +44,8 @@ double BarChart::getMode() const {
 }
 
 void BarChart::reset_Chart() {
+
+	std::cout << "\n" << std::setw(50) << this->data_title << std::endl;
 
 	for (int i = 0; i < this->rows; i++) {
 
@@ -49,9 +61,26 @@ void BarChart::reset_Chart() {
 	}
 }
 
-void BarChart::displayChart() const {
+void BarChart::readData() {
+
+	
+
+}
+
+void BarChart::displayChart() {
+
+	reset_Chart();
+
+	int n = this->rows, count = 0;
 
 	for (int i = 0; i < this->rows; i++) {
+
+		if (n == this->y_labels[count]) {
+
+			std::cout << std::setw(5) << y_labels[count];
+			count++;
+		}
+		else std::cout << std::setw(5) << " ";
 
 		for (int j = 0; j < this->cols; j++) {
 
@@ -59,5 +88,6 @@ void BarChart::displayChart() const {
 		}
 
 		std::cout << "\n";
+		n--;
 	}
 }

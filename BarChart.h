@@ -1,6 +1,7 @@
 #ifndef _BARCHART_
 #define _BARCHART_
-#include <vector>
+#include <string>
+#include <fstream>
 #include "BarChartNode.h"
 
 class BarChart
@@ -9,8 +10,11 @@ private:
 	BarChartNode* head;
 	double mode, mean, median;
 	char** chart_Matrix;
+	int* y_labels;
 	const int rows = 31;
 	const int cols = 100;
+	std::fstream data;
+	std::string data_title;
 public:
 	BarChart();
 	~BarChart();
@@ -19,11 +23,10 @@ public:
 	double getMedian() const;
 	double getMode() const;
 	void reset_Chart(); 
-	// next to do
-	// get chart width and label from user
+	void readData();
 	// add label and width to node 
 	// create a chart
-	void displayChart() const;
+	void displayChart();
 	// calculate mean
     // calculate median
     // calculate mode

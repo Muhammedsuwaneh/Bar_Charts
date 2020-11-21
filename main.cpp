@@ -5,6 +5,7 @@
 
 void frame() {
 
+	std::cout << std::setw(5) << " ";
 	for (int i = 0; i < 100; i++)
 		std::cout << "=";
 }
@@ -22,11 +23,9 @@ int main() {
 
 void Test1() {
 
-	std::cout << "\n" << std::setw(40) << "Chart 1" << std::endl;
 	try {
 
 		BarChart* chart = new BarChart();
-		chart->reset_Chart();
 		chart->displayChart();
 
 	}
