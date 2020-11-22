@@ -1,3 +1,11 @@
+/*
+*
+*@author - Muhammed Suwaneh
+*@ESOGU Department of Computer Engineering
+*
+*
+*/
+
 #include <iostream>
 #include <iomanip>
 #include "BarChart.h";
