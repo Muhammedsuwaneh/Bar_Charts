@@ -1,0 +1,4 @@
+﻿  main.cpp
+E:\C++ Data Structures and Algorithms\Practice\Bar_Charts\main.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+E:\C++ Data Structures and Algorithms\Practice\Bar_Charts\main.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Bar_Charts.vcxproj -> E:\C++ Data Structures and Algorithms\Practice\Bar_Charts\Debug\Bar_Charts.exe
