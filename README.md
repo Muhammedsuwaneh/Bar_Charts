@@ -13,7 +13,7 @@ A bar chart or bar graph is a chart or graph that presents
 categorical data with rectangular bars with heights or 
 lengths proportional to the values that they represent
 
-1. The Program read a data set and extracts the necessary data 
+1. The Program reads a data set and extracts the necessary data 
 2. The data read can be used to create a node which will contain the height of each bar and their label
 3. The Program uses these info to populate the bar chart
 4. The data is used to calculate the mean and total sum of the values given.
