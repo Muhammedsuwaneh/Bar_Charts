@@ -30,9 +30,9 @@ The Program is fully implemented using the C & C++ Programming Languages and the
 
 ### Test 1
 
-![Screenshot](Screenshots/Test 1.png)
+![Screenshot](Screenshots/Test1.png)
 
 
 ### Test 2
 
-![Screenshot](Screenshots/Test 1.png)
+![Screenshot](Screenshots/Test2.png)
