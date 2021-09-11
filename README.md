@@ -4,7 +4,7 @@
 
 The Project runs on Visual Studio with C++ installed. It is highly recommended to maximize the CLI 
 to clearly see the chart especially for larger data sets. Use data sets with no more than 12 bars to plot 
-for it to appear learly and organized on the CLI. Sample data sets can be found here [`dataSet1.txt`](dataSet1.txt)
+for it to appear clearly and organized on the CLI. Sample data sets can be found here [`dataSet1.txt`](dataSet1.txt)
 For data sets larger than 12 bars to plot, it is advisable to use Python[Spyder Editor] or other data visualization tools. 
 
 ## About 
